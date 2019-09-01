@@ -1,3 +1,4 @@
-/node-ssr-middleawares/node_modules
-/vue-example/node_modules
+node_modules/
 
+.idea/
+.vscode/

@@ -1,5 +1,5 @@
 {
-  "name": "node-ssr-middleawares",
+  "name": "node-ssr-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,7 +19,9 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "vue": "^2.6.10",
+    "vue-server-renderer": "^2.6.10"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"

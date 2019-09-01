@@ -1,12 +1,17 @@
 # node-ssr-template
 
-A node SSR  template for Vue SPA project
+A node SSR template for Vue SPA project
 
+## Project setup
 
-## node-ssr-middleawares
+```
+npm install
+```
 
-node server project with koa2 framework
+## Getting Start
 
-## vue-example
+```
+npm start
+```
 
-vue projects 
+open in browser: http://127.0.0.1:3000/
