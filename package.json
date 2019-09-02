@@ -12,16 +12,24 @@
     "debug": "^4.1.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
+    "koa-compress": "^3.0.0",
     "koa-convert": "^1.2.0",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.0",
     "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
+    "koa-send": "^5.0.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
+    "lru-cache": "^5.1.1",
     "pug": "^2.0.3",
     "vue": "^2.6.10",
-    "vue-server-renderer": "^2.6.10"
+    "vue-loader": "^15.7.1",
+    "vue-router": "^3.1.3",
+    "vue-server-renderer": "^2.6.10",
+    "vue-style-loader": "^4.1.2",
+    "webpack-dev-middleware": "^3.7.0",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
