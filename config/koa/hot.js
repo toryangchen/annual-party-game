@@ -3,7 +3,7 @@
 var hotMiddleware = require('webpack-hot-middleware');
 var PassThrough = require('stream').PassThrough;
 
-module.exports = (compiler, opts) => {
+module.exports = (compiler, opts = {}) => {
   opts.path = opts.path || '/__webpack_hmr';
 
   let middleware = hotMiddleware(compiler, opts);

@@ -34,7 +34,7 @@ export default app => {
       }),
     )
     .use((ctx, next) => {
-      if (/^\/api/.text(ctx.url)) {
+      if (/^\/api/.test(ctx.url)) {
         ctx.body = 'World';
       }
       next();
