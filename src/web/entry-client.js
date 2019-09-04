@@ -23,6 +23,7 @@ Vue.mixin({
 
 const { app, router, store } = createApp();
 
+// 将window.__INITIAL_STATE__ 的数据转存到 store中
 if (window.__INITIAL_STATE__) {
   store.replaceState(window.__INITIAL_STATE__);
 }
