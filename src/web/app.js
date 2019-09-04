@@ -18,6 +18,9 @@ Vue.prototype.$isProd = process.env.NODE_ENV === 'production';
 
 Vue.mixin(titleMixin);
 
+/**
+ * Vue.filter 增加全局的过滤函数
+ */
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
 });
@@ -26,6 +29,7 @@ export function createApp() {
   const store = createStore();
   const router = createRouter();
 
+  // 将 store 和 router 连接，即在store可以直接获取当前的router
   sync(store, router);
 
   const app = new Vue({

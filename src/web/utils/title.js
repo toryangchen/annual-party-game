@@ -6,6 +6,10 @@ function getTitle(vm) {
   }
 }
 
+/**
+ * 在SSR中，mounted()钩子函数不执行，
+ * 于是在server的 Mixin 中，将created 换成 mounted
+ */
 const serverTitleMixin = {
   created() {
     const title = getTitle(this);

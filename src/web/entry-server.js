@@ -14,13 +14,16 @@ export default context => {
 
     router.push(url);
 
+    // onReady 有效可以确保 SSR是 服务端和客户端输出一致
     router.onReady(() => {
+      // 返回目标位置或是当前路由匹配的组件数组
       const matchedComponents = router.getMatchedComponents();
       if (!matchedComponents.length) {
         return reject(new Error('404'));
       }
       Promise.all(
         matchedComponents.map(
+          // asyncData是在每个Component中写
           ({ asyncData }) =>
             asyncData &&
             asyncData({

@@ -10,6 +10,7 @@ export default {
     };
   },
   asyncData({ store, route }) {
+    console.log("toryang 1: " + route.params.id);
     return store.dispatch("api/fetchVal", route.params.id);
   },
   computed: {
