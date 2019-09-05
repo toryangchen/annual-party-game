@@ -1,14 +1,4 @@
 .DS_Store
-node_modules
-
-/dist/web
-/dist/api
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-package-lock.json
 
 .idea
 .vscode
