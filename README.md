@@ -1,3 +1,4 @@
-# node-ssr-template
+# 项目实战准备
 
-koa2-vue-ssr-cli : koa2-vue-ssr的脚手架
+1. 环境准备
+2.
