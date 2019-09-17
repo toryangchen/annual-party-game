@@ -1,6 +1,9 @@
 import Koa from "koa";
 const consola = require("consola");
-const { Nuxt, Builder } = require("nuxt");
+const {
+  Nuxt,
+  Builder
+} = require("nuxt");
 
 const app = new Koa();
 
@@ -14,7 +17,7 @@ async function start() {
 
   const {
     host = process.env.HOST || "127.0.0.1",
-    port = process.env.PORT || 3000
+      port = process.env.PORT || 3000
   } = nuxt.options.server;
 
   // Build in development
