@@ -36,7 +36,7 @@
           <el-input v-model="ruleForm.pwd" type="password"></el-input>
         </el-form-item>
         <el-form-item label="确认密码" prop="cpwd">
-          <el-input v-modle="ruleForm.cpwd" type="password"></el-input>
+          <el-input v-model="ruleForm.cpwd" type="password"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="register">
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import axios from "../server/interface/utils/axios";
 export default {
   layout: "blank",
   data: () => {
@@ -118,7 +119,14 @@ export default {
     };
   },
   methods: {
-    sendMsg: () => {},
+    sendMsg: () => {
+      axios
+        .post("/users/vertify", {
+          username: "toryang",
+          email: "toryangchen@outlook.com"
+        })
+        .then(({ status, data }) => {});
+    },
     register: () => {}
   }
 };
