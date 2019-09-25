@@ -125,14 +125,46 @@ router.post('/vertify', async (ctx, next) => {
 		username,
 		email
 	} = ctx.request.body;
+	const saveExpire = await Store.hget(`nodemail:${username}`, 'expire');
+	if (saveExpire && new Date().getTime() - saveExpire < 0) {
+		ctx.body = {
+			code: -1,
+			msg: '请求过于频繁，1分钟请求一次'
+		}
+		return false;
+	}
+	let transporter = nodeMailer.createTransport({
+		service: 'qq',
+		auth: {
+			user: Email.smtp.user,
+			pass: Email.smtp.pass
+		}
+	})
+	let ko = {
+		code: Email.smtp.code(),
+		expire: Email.smtp.expire(),
+		email,
+		user: username
+	}
+
+	let mailOptions = {
+		form: `"认证邮件"<${Email.smtp.user}>`,
+		to: ko.email,
+		subject: '发送注册码',
+		html: `注册吗是${ko.code}`
+	}
+
+	await transporter.sendMail(mailOptions, (error, info) => {
+		if (error) {
+			return console.log(error)
+		} else {
+			Store.hmset(`nodemail:${ko.user}`, 'code', ko.code, 'expire', ko.expire, 'email', ko.email)
+		}
+	})
 	ctx.body = {
 		code: 0,
 		msg: '验证码已发送，一分钟内有效',
-		data: {
-			username,
-			email,
-			// saveExpire
-		}
+		code: ko.code
 	};
 });
 
