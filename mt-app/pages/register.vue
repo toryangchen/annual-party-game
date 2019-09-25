@@ -58,7 +58,8 @@
 </template>
 
 <script>
-import axios from "../server/interface/utils/axios";
+import axios from "axios";
+
 export default {
   layout: "blank",
   data: () => {
@@ -125,7 +126,9 @@ export default {
           username: "toryang",
           email: "toryangchen@outlook.com"
         })
-        .then(({ status, data }) => {});
+        .then(({ status, data }) => {
+          console.log(status, data);
+        });
     },
     register: () => {}
   }
