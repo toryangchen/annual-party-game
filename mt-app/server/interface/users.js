@@ -134,6 +134,7 @@ router.post('/vertify', async (ctx, next) => {
 		return false;
 	}
 	let transporter = nodeMailer.createTransport({
+		host: Email.smtp.host,
 		service: 'qq',
 		auth: {
 			user: Email.smtp.user,
@@ -148,12 +149,12 @@ router.post('/vertify', async (ctx, next) => {
 	}
 
 	let mailOptions = {
-		form: `"认证邮件"<${Email.smtp.user}>`,
+		from: `认证邮件<${Email.smtp.user}>`,
 		to: ko.email,
 		subject: '发送注册码',
-		html: `注册吗是${ko.code}`
+		html: `注册码是${ko.code}`
 	}
-
+	console.log('from', `认证邮件<${Email.smtp.user}>`);
 	await transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
 			return console.log(error)
@@ -167,5 +168,36 @@ router.post('/vertify', async (ctx, next) => {
 		code: ko.code
 	};
 });
+
+router.get('/exit', async (ctx, next) => {
+	await ctx.logout()
+	if (!ctx.isAuthenticated()) {
+		ctx.body = {
+			code: 0
+		}
+	} else {
+		ctx.body = {
+			code: -1
+		}
+	}
+})
+
+router.get('/getUser', async (ctx) => {
+	if (ctx.isAuthenticated()) {
+		const {
+			username,
+			email
+		} = ctx.session.passport.user;
+		ctx.body = {
+			user: username,
+			email,
+		}
+	} else {
+		ctx.body = {
+			user: '',
+			email: ''
+		}
+	}
+})
 
 export default router;
