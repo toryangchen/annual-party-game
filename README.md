@@ -1,4 +1,4 @@
-# 项目实战准备
+# 实战项目
 
-1. 环境准备
+1. [vue+nuxt+koa2 仿美团网项目](https://github.com/toryangchen/fullstack-project-mt/tree/master/mt-app)
 2.
