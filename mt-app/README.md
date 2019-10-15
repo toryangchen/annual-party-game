@@ -16,10 +16,11 @@
 
 ``` bash
 # start mongodb
-$ mongod
+$ cd /usr/local/mongodb/bin
+$ ./mongod --config ../mongodb.conf
 
 # start redis
-$ redis-cli
+$ redis-server
 
 # install dependencies
 $ npm run install

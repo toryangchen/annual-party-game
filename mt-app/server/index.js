@@ -14,6 +14,7 @@ import dbConfig from './dbs/config';
 import passport from './interface/utils/passport';
 
 import users from "./interface/users";
+import geo from "./interface/geo";
 
 const app = new Koa();
 const host = process.env.HOST || "127.0.0.1";
@@ -54,6 +55,7 @@ async function start() {
 	}
 
 	app.use(users.routes()).use(users.allowedMethods());
+	app.use(geo.routes()).use(geo.allowedMethods());
 	app.use(ctx => {
 		ctx.status = 200;
 		ctx.respond = false; // Mark request as handled for Koa
