@@ -50,7 +50,7 @@ router.get('/province/:id', async (ctx) => {
 	} = await axios.get(`http://cp-tools.cn/geo/province/${ctx.params.id}`);
 
 	ctx.body = {
-		city: status === 200 ? city : [];
+		city: status === 200 ? city : []
 	}
 })
 
@@ -62,7 +62,7 @@ router.get('/city', async (ctx) => {
 		}
 	} = await axios.get(`http://cp-tools.cn/geo/city`);
 	ctx.body = {
-		city: status === 200 ? city : [];
+		city: status === 200 ? city : []
 	}
 })
 
@@ -74,7 +74,7 @@ router.get('/hotCity', async (ctx) => {
 		}
 	} = await axios.get(`http://cp-tools.cn/geo/hotCity`);
 	ctx.body = {
-		hots: status === 200 ? hots : [];
+		hots: status === 200 ? hots : []
 	}
 })
 
