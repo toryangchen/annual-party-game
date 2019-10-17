@@ -41,7 +41,7 @@ export default {
     };
   },
   async asyncData({ app }) {
-    let { app } = await app.$axios.get("searchList");
+    let { data } = await app.$axios.get("searchList");
     return { items: data.list };
   },
   methods: {

@@ -188,5 +188,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/css/register";
+@import "@/assets/css/register/index.scss";
 </style>
