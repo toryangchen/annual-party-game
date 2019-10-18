@@ -1,10 +1,12 @@
+const pkg = require('./package');
+
 module.exports = {
 	mode: "universal",
 	/*
 	 ** Headers of the page
 	 */
 	head: {
-		title: process.env.npm_package_name || "",
+		title: pkg.name,
 		meta: [
 			{
 				charset: "utf-8"
@@ -57,11 +59,19 @@ module.exports = {
 	 ** Build configuration
 	 */
 	build: {
-		transpile: [/^element-ui/],
 		/*
 		 ** You can extend webpack config here
 		 */
-		extend(config, ctx) {}
-	},
-	cache: false
+		extend(config, ctx) {
+			if (ctx.isDev && ctx.isClient) {
+				config.module.rules.push({
+					enforce: 'pre',
+					test: /\.(js|vue)$/,
+					loader: 'eslint-loader',
+					exclude: /(node_modules)/
+				})
+			}
+		},
+		cache: false
+	}
 };

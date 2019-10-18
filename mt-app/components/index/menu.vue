@@ -3,17 +3,19 @@
     <dl class="nav" @mouseleave="mouseleave">
       <dt>全部分类</dt>
       <dd
-        @mouseenter="entry"
         v-for="(item, index) in $store.state.home.menu"
         :key="index"
+        @mouseenter="entry"
       >
         <i :class="item.type" />{{ item.name }}<span class="arrow" />
       </dd>
     </dl>
-    <div class="detail" v-if="kind" @mouseenter="sover" @mouseleave="sout">
+    <div v-if="kind" class="detail" @mouseenter="sover" @mouseleave="sout">
       <template v-for="(item, index) in curdetail.child">
-        <h4 :key="index">{{ item.title }}</h4>
-        <span v-for="v in item.child" :index="v">{{ v }}</span>
+        <h4 :key="index">
+          {{ item.title }}
+        </h4>
+        <span v-for="v in item.child" :key="v" :index="v">{{ v }}</span>
       </template>
     </div>
   </div>

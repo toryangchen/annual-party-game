@@ -23,7 +23,9 @@
         <el-card :body-style="{ padding: '0px' }" shadow="never">
           <img :src="item.img" class="image" />
           <ul class="cbody">
-            <li class="title">{{ item.title }}</li>
+            <li class="title">
+              {{ item.title }}
+            </li>
             <li class="pos">
               <span>{{ item.pos }}</span>
             </li>
@@ -56,9 +58,6 @@ export default {
     cur: function() {
       return this.list[this.kind];
     }
-  },
-  methods: {
-    over: function(e) {}
   },
   async mounted() {
     let self = this;

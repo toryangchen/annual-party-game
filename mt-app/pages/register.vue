@@ -30,7 +30,7 @@
           <span class="status">{{ statusMsg }}</span>
         </el-form-item>
         <el-form-item label="验证码" prop="code">
-          <el-input v-model="ruleForm.code" maxLength="4"></el-input>
+          <el-input v-model="ruleForm.code" max-length="4"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="pwd">
           <el-input v-model="ruleForm.pwd" type="password"></el-input>
@@ -42,7 +42,9 @@
           <el-button type="primary" @click="register">
             同意以下协议并注册
           </el-button>
-          <div class="error">{{ error }}</div>
+          <div class="error">
+            {{ error }}
+          </div>
         </el-form-item>
         <el-form-item>
           <a

@@ -25,12 +25,14 @@
           type="password"
         ></el-input>
         <div class="foot">
-          <el-checkbox v-model="checked">7天内自动登录</el-checkbox>
+          <el-checkbox v-model="checked">
+            7天内自动登录
+          </el-checkbox>
           <b>忘记密码？</b>
         </div>
-        <el-button class="btn-login" type="success" size="mini" @click="login"
-          >登录</el-button
-        >
+        <el-button class="btn-login" type="success" size="mini" @click="login">
+          登录
+        </el-button>
       </div>
     </div>
   </div>

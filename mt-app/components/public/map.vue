@@ -1,7 +1,7 @@
 <template>
   <div
-    class="m-map"
     :id="id"
+    class="m-map"
     :style="{ width: width + 'px', height: height + 'px', margin: '34px auto' }"
   ></div>
 </template>

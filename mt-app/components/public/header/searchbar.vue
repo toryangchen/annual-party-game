@@ -19,7 +19,7 @@
           <button class="el-button el-button--primary">
             <i class="el-icon-search"></i>
           </button>
-          <dl class="hotPlace" v-if="isHotPlace">
+          <dl v-if="isHotPlace" class="hotPlace">
             <dt>热门搜索</dt>
             <dd
               v-for="(item, index) in $store.state.home.hotPlace.slice(0, 5)"
@@ -30,7 +30,7 @@
               }}</a>
             </dd>
           </dl>
-          <dl class="searchList" v-if="isSearchList">
+          <dl v-if="isSearchList" class="searchList">
             <dd v-for="(item, index) in searchList" :key="index">
               <a :href="'/products?keyword=' + encodeURIComponent(item.name)">{{
                 item.name
@@ -48,26 +48,52 @@
           </a>
         </p>
         <ul class="nav">
-          <li><nuxt-link to="/" class="takeout">美团外卖</nuxt-link></li>
-          <li><nuxt-link to="/" class="movie">猫眼电影</nuxt-link></li>
-          <li><nuxt-link to="/" class="hotel">美团酒店</nuxt-link></li>
-          <li><nuxt-link to="/" class="apartment">名宿公寓</nuxt-link></li>
-          <li><nuxt-link to="/" class="business">商家入驻</nuxt-link></li>
+          <li>
+            <nuxt-link to="/" class="takeout">
+              美团外卖
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/" class="movie">
+              猫眼电影
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/" class="hotel">
+              美团酒店
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/" class="apartment">
+              名宿公寓
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/" class="business">
+              商家入驻
+            </nuxt-link>
+          </li>
         </ul>
       </el-col>
       <el-col :span="6" class="right">
         <ul class="security">
           <li>
             <i class="refund" />
-            <p class="txt">随时退</p>
+            <p class="txt">
+              随时退
+            </p>
           </li>
           <li>
             <i class="single" />
-            <p class="txt">不满意免单</p>
+            <p class="txt">
+              不满意免单
+            </p>
           </li>
           <li>
             <i class="overdue" />
-            <p class="txt">过期退</p>
+            <p class="txt">
+              过期退
+            </p>
           </li>
         </ul>
       </el-col>
