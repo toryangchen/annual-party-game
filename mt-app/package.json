@@ -27,7 +27,7 @@
     "koa-redis": "^4.0.0",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.15",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "nodemailer": "^6.3.0",
     "nuxt": "latest",
     "passport-local": "^1.0.0",
