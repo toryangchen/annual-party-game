@@ -1,4 +1,4 @@
-# 实战项目
+# vue-danmu-demo
 
-1. [vue+nuxt+koa2 仿美团网项目](https://github.com/toryangchen/fullstack-project-mt/tree/master/mt-app)
-2.
+用Vue实现弹幕效果
+
