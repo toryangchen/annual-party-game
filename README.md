@@ -1,29 +1,13 @@
-# vue-danmu
+## 公司年会小程序
 
-## Project setup
-```
-npm install
-```
+### server
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+服务端：
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Node + Koa2 实现
 
-### Run your tests
-```
-npm run test
-```
+### web
 
-### Lints and fixes files
-```
-npm run lint
-```
+web 端
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Vue 技术栈
