@@ -1,5 +1,7 @@
 <template>
-  <div id="app">first init</div>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
